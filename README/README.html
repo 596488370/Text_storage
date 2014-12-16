@@ -1,0 +1,48 @@
+
+<p style="color: rgb(51, 51, 51); font-family: Arial; line-height: 26px; background-color: rgb(255, 255, 255);">我最重视的是信息管理，这个文件管理器我在大一放暑假的时候就已经做出来了</p>
+<p style="color: rgb(51, 51, 51); font-family: Arial; line-height: 26px; background-color: rgb(255, 255, 255);">当时只有两个类，还有一些小bug也没管，现在我想用软件过程重构它，让它更清晰</p>
+<p style="color: rgb(51, 51, 51); font-family: Arial; line-height: 26px; background-color: rgb(255, 255, 255);">我只从我自己的需求出发、使用Java实现</p>
+<p style="color: rgb(51, 51, 51); font-family: Arial; line-height: 26px; background-color: rgb(255, 255, 255);">在最后我会公布代码托管地址，感兴趣的朋友可以看看</p>
+<p style="color: rgb(51, 51, 51); font-family: Arial; line-height: 26px; background-color: rgb(255, 255, 255);"><br></p>
+<p style="color: rgb(51, 51, 51); font-family: Arial; line-height: 26px; background-color: rgb(255, 255, 255);">补充：我只是大至了解了一下Java，io操作函数都是借鉴与网上的，对于编码我更</p>
+<p style="color: rgb(51, 51, 51); font-family: Arial; line-height: 26px; background-color: rgb(255, 255, 255);">重于设计，但我的设计模式也只是掌握皮毛而已，最终我的代码还是只有两个类</p>
+<p style="color: rgb(51, 51, 51); font-family: Arial; line-height: 26px; background-color: rgb(255, 255, 255);">希望有高手能提出宝贵建议</p>
+<p style="color: rgb(51, 51, 51); font-family: Arial; line-height: 26px; background-color: rgb(255, 255, 255);"><br></p>
+<p style="color: rgb(51, 51, 51); font-family: Arial; line-height: 26px; background-color: rgb(255, 255, 255);"><span style="color: rgb(255, 0, 0);">一.UML Use Case（用例图）</span></p>
+<p style="color: rgb(51, 51, 51); font-family: Arial; line-height: 26px; background-color: rgb(255, 255, 255);">工具：www.lucidchart.com</p>
+<p style="color: rgb(51, 51, 51); font-family: Arial; line-height: 26px; background-color: rgb(255, 255, 255);"><img src="http://img.blog.csdn.net/20141215130514734?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvZGFuNTk2NDg4Mzcw/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center" alt="" style="border-style: none; max-width: 100%;"><br></p>
+<p style="color: rgb(51, 51, 51); font-family: Arial; line-height: 26px; background-color: rgb(255, 255, 255);">由于这个网站只支持英文，顺便可以锻炼英语水平</p>
+<p style="color: rgb(51, 51, 51); font-family: Arial; line-height: 26px; background-color: rgb(255, 255, 255);"><br></p>
+<p style="color: rgb(51, 51, 51); font-family: Arial; line-height: 26px; background-color: rgb(255, 255, 255);">该用例图大致的意思是，用户可以管理一个文件夹，在该文件夹里建子文件夹，在子文件夹里建文件，亦可完成修改、删除，同时窗体还有一些附加功能</p>
+<p style="color: rgb(51, 51, 51); font-family: Arial; line-height: 26px; background-color: rgb(255, 255, 255);"><br></p>
+<p style="color: rgb(51, 51, 51); font-family: Arial; line-height: 26px; background-color: rgb(255, 255, 255);"><br></p>
+<p style="color: rgb(51, 51, 51); font-family: Arial; line-height: 26px; background-color: rgb(255, 255, 255);"><span style="color: rgb(255, 0, 0);">二.UML class dgm（类图）</span></p>
+<p style="color: rgb(51, 51, 51); font-family: Arial; line-height: 26px; background-color: rgb(255, 255, 255);"><img src="http://img.blog.csdn.net/20141215154242234?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvZGFuNTk2NDg4Mzcw/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center" alt="" style="border-style: none; max-width: 100%;"><br></p>
+<p style="color: rgb(51, 51, 51); font-family: Arial; line-height: 26px; background-color: rgb(255, 255, 255);">程序的思路很简单，主类调用一个工具类，主类里也残存了两个工具类函数，实在是懒得改</p>
+<p style="color: rgb(51, 51, 51); font-family: Arial; line-height: 26px; background-color: rgb(255, 255, 255);"><br></p>
+<p style="color: rgb(51, 51, 51); font-family: Arial; line-height: 26px; background-color: rgb(255, 255, 255);"><br></p>
+<p style="color: rgb(51, 51, 51); font-family: Arial; line-height: 26px; background-color: rgb(255, 255, 255);"><span style="color: rgb(255, 0, 0);">三.程序实现</span></p>
+<p style="color: rgb(51, 51, 51); font-family: Arial; line-height: 26px; background-color: rgb(255, 255, 255);">这里直接介绍功能</p>
+<p style="color: rgb(51, 51, 51); font-family: Arial; line-height: 26px; background-color: rgb(255, 255, 255);"><br></p>
+<p style="color: rgb(51, 51, 51); font-family: Arial; line-height: 26px; background-color: rgb(255, 255, 255);">1.程序开始时可以选择路径</p>
+<p style="color: rgb(51, 51, 51); font-family: Arial; line-height: 26px; background-color: rgb(255, 255, 255);"><img src="http://img.blog.csdn.net/20141215155023406?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvZGFuNTk2NDg4Mzcw/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center" alt="" style="border-style: none; max-width: 100%;"><br></p>
+<p style="color: rgb(51, 51, 51); font-family: Arial; line-height: 26px; background-color: rgb(255, 255, 255);"><br></p>
+<p style="color: rgb(51, 51, 51); font-family: Arial; line-height: 26px; background-color: rgb(255, 255, 255);">2.程序界面</p>
+<p style="color: rgb(51, 51, 51); font-family: Arial; line-height: 26px; background-color: rgb(255, 255, 255);"><img src="http://img.blog.csdn.net/20141215155132390?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvZGFuNTk2NDg4Mzcw/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center" alt="" style="border-style: none; max-width: 100%;"><br></p>
+<p style="color: rgb(51, 51, 51); font-family: Arial; line-height: 26px; background-color: rgb(255, 255, 255);"><br></p>
+<p style="color: rgb(51, 51, 51); font-family: Arial; line-height: 26px; background-color: rgb(255, 255, 255);">3.附加功能</p>
+<p style="color: rgb(51, 51, 51); font-family: Arial; line-height: 26px; background-color: rgb(255, 255, 255);"><img src="http://img.blog.csdn.net/20141215155455680?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvZGFuNTk2NDg4Mzcw/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center" alt="" style="border-style: none; max-width: 100%;"><br></p>
+<p style="color: rgb(51, 51, 51); font-family: Arial; line-height: 26px; background-color: rgb(255, 255, 255);"><br></p>
+<p style="color: rgb(51, 51, 51); font-family: Arial; line-height: 26px; background-color: rgb(255, 255, 255);">可以调节透明度</p>
+<p style="color: rgb(51, 51, 51); font-family: Arial; line-height: 26px; background-color: rgb(255, 255, 255);">可以顶置</p>
+<p style="color: rgb(51, 51, 51); font-family: Arial; line-height: 26px; background-color: rgb(255, 255, 255);"><br></p>
+<p style="color: rgb(51, 51, 51); font-family: Arial; line-height: 26px; background-color: rgb(255, 255, 255);"><br></p>
+<p style="color: rgb(51, 51, 51); font-family: Arial; line-height: 26px; background-color: rgb(255, 255, 255);"><span style="color: rgb(255, 0, 0);">四.程序开源说明</span></p>
+<p style="color: rgb(51, 51, 51); font-family: Arial; line-height: 26px; background-color: rgb(255, 255, 255);">Text_storage存在一个bug是每次保存文件，每行会增加一个换行符，不便于下次编辑</p>
+<p style="color: rgb(51, 51, 51); font-family: Arial; line-height: 26px; background-color: rgb(255, 255, 255);">当掌握了io类后，我会重新写读写函数，发布v2版本</p>
+<p style="color: rgb(51, 51, 51); font-family: Arial; line-height: 26px; background-color: rgb(255, 255, 255);"><br></p>
+<p style="color: rgb(51, 51, 51); font-family: Arial; line-height: 26px; background-color: rgb(255, 255, 255);">Text_storage(chooser) 可执行jar文件下载地址：<a target="_blank" href="http://pan.baidu.com/s/1i37UtxV" style="color: rgb(51, 102, 153); text-decoration: none;">http://pan.baidu.com/s/1i37UtxV</a>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;//可选路径版，Java1.6即可运行</p>
+<p style="color: rgb(51, 51, 51); font-family: Arial; line-height: 26px; background-color: rgb(255, 255, 255);">github托管地址：<a target="_blank" href="https://github.com/596488370/Text_storage" style="color: rgb(51, 102, 153); text-decoration: none;">https://github.com/596488370/Text_storage.git</a>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;//v1版本，若对程序进行了改动，请在README.md更新版本说明</p>
+<p style="color: rgb(51, 51, 51); font-family: Arial; line-height: 26px; background-color: rgb(255, 255, 255);"><br></p>
+<p style="color: rgb(51, 51, 51); font-family: Arial; line-height: 26px; background-color: rgb(255, 255, 255);">如若推送分支，请以版本号v3、v4、v5、、、 顺序提交</p>
+<div><br></div>
